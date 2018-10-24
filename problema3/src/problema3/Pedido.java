@@ -10,8 +10,10 @@ public class Pedido {
     private Date data;
     private String endereco;
     private ArrayList<ItemPedido> itens;
+    private ITipoEntrega tipoEntrega;
 
     public Pedido() {
+    	itens = new ArrayList<>();
     }
 
     public int getNumero() {
@@ -57,5 +59,16 @@ public class Pedido {
         }
         return valorTotal;
     }
-
+    
+    public void setTipoEntrega(ITipoEntrega entrega) {
+    	tipoEntrega = entrega;
+    }
+    
+    public double getValorEntrega() throws TipoEntregaInvalido  {
+    	return tipoEntrega.getValorEntrega(itens);
+    }
+    
+    public double getValorTotal() throws TipoEntregaInvalido {
+    	return getValorPedido() + getValorEntrega();
+    }
 }
