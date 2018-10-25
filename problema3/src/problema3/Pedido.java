@@ -10,7 +10,7 @@ public class Pedido {
     private Date data;
     private String endereco;
     private ArrayList<ItemPedido> itens;
-    private ITipoEntrega tipoEntrega;
+    private TipoEntrega tipoEntrega;
 
     public Pedido() {
     	itens = new ArrayList<>();
@@ -60,7 +60,7 @@ public class Pedido {
         return valorTotal;
     }
     
-    public void setTipoEntrega(ITipoEntrega entrega) {
+    public void setTipoEntrega(TipoEntrega entrega) {
     	tipoEntrega = entrega;
     }
     

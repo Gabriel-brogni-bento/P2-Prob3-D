@@ -2,27 +2,21 @@ package problema3;
 
 import java.util.ArrayList;
 
-public class SEDEX extends TipoEntrega {
-	
-	private static SEDEX instance;
+public class Motoboy extends TipoEntrega {
 
-	private SEDEX() {
-		
+	private static Motoboy instance;
+	
+	private Motoboy() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
 	public double getValorEntrega(ArrayList<ItemPedido> itens) throws TipoEntregaInvalido {
 		
 		int peso = getPesoTotal(itens);
-
-		if (peso <= 1000) {
-			return 10;
-		} else if (peso <= 2000) {
-			return 15;
-		} else if (peso <= 3000) {
-			return 20;
-		} else if (peso <= 5000) {
-			return 30;
+		
+		if((peso < 25000) && (itens.size() < 30)) {
+			return 7;
 		}
 		
 		throw new TipoEntregaInvalido();
@@ -31,7 +25,7 @@ public class SEDEX extends TipoEntrega {
 	
 	public static TipoEntrega getInstance() {
 		if(instance == null) {
-			instance = new SEDEX();
+			instance = new Motoboy();
 		}
 		return instance;
 	}

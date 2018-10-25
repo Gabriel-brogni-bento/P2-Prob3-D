@@ -2,16 +2,18 @@ package problema3;
 
 import java.util.ArrayList;
 
-public class PAC implements ITipoEntrega {
+public class PAC extends TipoEntrega {
 
+	private static PAC instance;
+	
+	private PAC() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public double getValorEntrega(ArrayList<ItemPedido> itens) {
 		
-		int peso = 0;
-		
-		for (ItemPedido itemPedido : itens) {
-			peso += itemPedido.getProduto().getPeso() * itemPedido.getQuantidade();	
-		}
+		int peso = getPesoTotal(itens);
 		
 		if (peso <= 500) {
 			return 12.5;
@@ -36,5 +38,12 @@ public class PAC implements ITipoEntrega {
 			
 			return valorBase;
 		}
+	}
+	
+	public static TipoEntrega getInstance() {
+		if(instance == null) {
+			instance = new PAC();
+		}
+		return instance;
 	}
 }
