@@ -1,7 +1,7 @@
 Strategy: 
-Interface(Abstract class): TipoEntrega
+Comportamento(Abstract class): TipoEntrega
 
-Concrete classes: SEDEX, Motoboy, PAC e RetiradaLocal.
+Context classes: SEDEX, Motoboy, PAC e RetiradaLocal.
 
 Singleton:
 Metodo getInstance dentro das classes SEDEX, Motoboy, PAC e RetiradaLocal
