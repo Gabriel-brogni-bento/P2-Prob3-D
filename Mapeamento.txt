@@ -5,3 +5,13 @@ Concrete classes: SEDEX, Motoboy, PAC e RetiradaLocal.
 
 Singleton:
 Metodo getInstance dentro das classes SEDEX, Motoboy, PAC e RetiradaLocal
+
++-*+-*+-*+-*+-*+-*+-*+-*
+Observações do Professor:
+- a classe abstrata TipoEntrega, em seu método getValorEntrega deveria receber um objeto de Pedido. Assim, cada tipo de entrega poderia perguntar o que precisasse para seu cálculo, pois se algum cálculo necessitar além dos itens de pedido, será necessário reimplementar:
+public abstract class TipoEntrega {
+	abstract double getValorEntrega(ArrayList<ItemPedido> itens)
+  
+- trocaram as regras de negócio entre os tipos de entrega PAC e SEDEX
+
+Nota (0-3):2,8
